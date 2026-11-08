@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f3ec" />
+  <meta name="description" content="Una invitación especial para compartir en familia." />
+  <title>Blue Romance · Nuestra pedida de mano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="invitation" id="inicio">
+    <section class="panel hero" aria-label="Portada">
+      <div class="frame"></div>
+      <img class="floral corner top-left" src="assets/floral-esquina.svg" alt="" />
+      <img class="floral corner bottom-right" src="assets/floral-esquina.svg" alt="" />
+      <div class="hero-content reveal">
+        <div class="monogram" id="monogram" aria-label="Iniciales">♡</div>
+        <p class="eyebrow">UN MOMENTO PARA RECORDAR</p>
+        <h1>Nuestra <span>Pedida de Mano</span></h1>
+        <div class="rule"><span>♡</span></div>
+        <p class="names"><span data-field="novio" class="placeholder">Nombre del novio</span><em>&amp;</em><span data-field="novia" class="placeholder">Nombre de la novia</span></p>
+        <p class="hero-note">Una celebración de amor y familia</p>
+        <button id="abrir" class="primary-button" type="button">Ver invitación <span aria-hidden="true">♡</span></button>
+        <p class="micro-note">Toca para descubrir este momento especial</p>
+      </div>
+    </section>
+
+
+<!-- FOTOGRAFÍA DE LA PAREJA -->
+<section class="panel photo-panel reveal" id="foto-pareja">
+
+  <div class="frame"></div>
+
+  <!-- Flores decorativas -->
+  <img
+    src="assets/floral-esquina.svg"
+    class="floral corner top-left small"
+    alt=""
+  />
+
+  <p class="eyebrow">UN AMOR, UNA HISTORIA</p>
+
+  <h2 class="photo-title">Nuestro amor</h2>
+
+  <div class="couple-photo-wrapper">
+    <div class="couple-photo-frame">
+      <img
+        src="assets/pareja.jpg"
+        alt="Fotografía de la pareja"
+        class="couple-photo"
+      />
+    </div>
+  </div>
+
+  <p class="photo-phrase">
+    El comienzo de una hermosa historia juntos.
+  </p>
+
+  <img
+    src="assets/floral-centro.svg"
+    class="divider-floral"
+    alt=""
+  />
+
+</section>
+
+    <section class="panel message reveal" id="mensaje" aria-labelledby="mensaje-titulo">
+      <div class="frame"></div>
+      <img class="floral corner top-right small" src="assets/floral-esquina.svg" alt="" />
+      <p class="eyebrow">CON MUCHO AMOR</p>
+      <h2 id="mensaje-titulo">Un momento <span>muy especial</span></h2>
+      <img class="divider-floral" src="assets/floral-centro.svg" alt="" />
+      <p>Con mucha alegría y amor, quiero invitarlos a compartir un momento muy especial en nuestras vidas.</p>
+      <p>He decidido dar un paso importante junto a la persona que amo, y será una gran felicidad contar con la presencia de cada uno de ustedes en este día tan significativo.</p>
+      <p class="featured">Los espero para celebrar nuestra pedida de mano.</p>
+      <div class="rule"><span>♡</span></div>
+    </section>
+
+    <section class="panel date-panel reveal" id="fecha" aria-labelledby="fecha-titulo">
+      <div class="frame"></div>
+      <p class="eyebrow">FALTA POCO PARA NUESTRO ENCUENTRO</p>
+      <h2 id="fecha-titulo">El gran <span>día</span></h2>
+      <div class="countdown" role="timer" aria-label="Cuenta regresiva">
+        <div><strong id="days">—</strong><small>Días</small></div>
+        <div><strong id="hours">—</strong><small>Horas</small></div>
+        <div><strong id="minutes">—</strong><small>Min</small></div>
+        <div><strong id="seconds">—</strong><small>Seg</small></div>
+      </div>
+      <p id="count-note" class="micro-note">La cuenta regresiva aparecerá al completar la fecha y la hora.</p>
+      <img class="divider-floral wide" src="assets/floral-centro.svg" alt="" />
+      <div class="date-display">
+        <p id="weekday" class="eyebrow">FECHA POR CONFIRMAR</p>
+        <strong id="day-number">—</strong>
+        <p id="month-year" class="eyebrow">MES Y AÑO</p>
+        <p id="time-label" class="event-time">Hora por confirmar</p>
+      </div>
+      <img class="floral corner bottom-left small" src="assets/floral-esquina.svg" alt="" />
+    </section>
+
+    <section class="panel venue reveal" id="lugar" aria-labelledby="lugar-titulo">
+      <div class="frame"></div>
+      <img class="floral corner top-left small" src="assets/floral-esquina.svg" alt="" />
+      <p class="eyebrow">DONDE NOS REUNIREMOS</p>
+      <h2 id="lugar-titulo">Lugar del <span>encuentro</span></h2>
+      <div class="venue-illustration" aria-hidden="true">
+        <svg viewBox="0 0 330 205"><path d="M40 174h250M78 171V78h174v93M69 83l96-61 96 61M101 169V94h128v75M143 169v-58h44v58M116 115h14m70 0h14" fill="none" stroke="#7895a5" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M53 174q-24-28-10-59 18 9 14 31m229 28q25-35 10-66-18 11-16 38" fill="none" stroke="#a7b9a7" stroke-width="2"/><path d="M165 23v-9m-5 4h10" stroke="#a7b9a7" stroke-width="1.5"/></svg>
+      </div>
+      <h3 id="venue-name" class="venue-name"></h3>
+      <p id="venue-address" class="venue-address">Dirección por completar</p>
+      <a id="maps-link" class="outline-button is-disabled" aria-disabled="true" tabindex="-1"><span aria-hidden="true">⌖</span> Cómo llegar</a>
+      <img class="divider-floral" src="assets/floral-centro.svg" alt="" />
+      <p class="micro-note"></p>
+    </section>
+
+    <section class="panel rsvp reveal" id="confirmar" aria-labelledby="confirmar-titulo">
+      <div class="frame"></div>
+      <img class="floral corner top-right small" src="assets/floral-esquina.svg" alt="" />
+      <p class="eyebrow">TU PRESENCIA ES IMPORTANTE</p>
+      <h2 id="confirmar-titulo">Confirma tu <span>asistencia</span></h2>
+      <p>Será una gran alegría contar contigo para compartir este momento tan importante.</p>
+      <p id="rsvp-limit" class="micro-note" hidden></p>
+      <a id="whatsapp-link" class="primary-button is-disabled" aria-disabled="true" tabindex="-1"><span aria-hidden="true">♡</span> Confirmar por WhatsApp</a>
+      <img class="divider-floral wide" src="assets/floral-centro.svg" alt="" />
+      <h2 class="farewell">¡Te espero!</h2>
+      <p class="closing">Con cariño, <span id="signoff">el novio</span></p>
+      <img class="floral bottom-bouquet" src="assets/floral-centro.svg" alt="" />
+    </section>
+  </main>
+  <button class="music-button" id="music-toggle" type="button" aria-label="Activar música" aria-pressed="false" title="Activar música">♫</button>
+  <audio id="music" loop preload="none"></audio>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

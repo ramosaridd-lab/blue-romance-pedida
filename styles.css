@@ -1,0 +1,76 @@
+:root{--ivory:#f7f3ec;--paper:#fbf8f2;--blue:#a9bdce;--ink:#365875;--sage:#91a395;--gold:#b7a27d;--text:#394653}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#e6e8e6;color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:21px}.invitation{width:min(100%,560px);margin:auto;box-shadow:0 10px 55px #20344720;overflow:hidden}.panel{position:relative;isolation:isolate;min-height:690px;padding:94px 48px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at 50% 25%,#fffdf8 0%,transparent 70%),repeating-linear-gradient(110deg,#ffffff10 0 2px,#c3ac8d07 2px 4px),var(--ivory);overflow:hidden}.panel+.panel{border-top:1px solid #d9d0bd}.frame{position:absolute;inset:17px;border:1px solid #b8a57f9e;pointer-events:none;border-radius:21px 3px 21px 3px;z-index:-1}.floral{pointer-events:none;position:absolute;z-index:-1;filter:drop-shadow(0 7px 9px #566d6530)}.corner{width:275px}.corner.small{width:188px}.top-left{top:-31px;left:-25px}.top-right{top:-31px;right:-28px;transform:scaleX(-1)}.bottom-right{bottom:-32px;right:-35px;transform:rotate(180deg)}.bottom-left{bottom:-28px;left:-30px;transform:scaleY(-1)}.eyebrow{font-family:'DM Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.24em;line-height:1.9;text-transform:uppercase;color:#46576a}.hero{min-height:100svh;padding-block:155px 100px}.hero-content{display:flex;flex-direction:column;align-items:center;max-width:100%}.monogram{height:110px;width:95px;border:3px double #91a6b2;border-radius:50%;display:grid;place-items:center;color:var(--ink);font-size:35px;letter-spacing:.02em;margin:0 0 28px;background:#f9f7f3a8}.hero h1,h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:500;margin:8px 0 18px;line-height:1.3}.hero h1 span,h2 span{display:block;font-family:'Great Vibes',cursive;color:var(--ink);font-weight:400;font-size:clamp(49px,10vw,69px);line-height:1.25}.rule{width:190px;display:flex;align-items:center;gap:11px;margin:15px auto 23px;color:#b59b73;font-size:19px}.rule:before,.rule:after{content:'';height:1px;flex:1;background:#b7a078}.names{font-family:'Great Vibes',cursive;color:var(--ink);font-size:clamp(39px,9vw,58px);line-height:1.25;margin:8px 0 15px;display:flex;flex-direction:column;gap:8px}.names em{font-family:'Cormorant Garamond',serif;font-size:31px;color:#a99678}.placeholder{opacity:.8}.hero-note{font-size:22px;margin:6px 0 28px}.primary-button,.outline-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;text-decoration:none;cursor:pointer;font:500 15px 'DM Sans',sans-serif;border-radius:100px;min-height:49px;padding:12px 27px;transition:transform .2s,background .2s,box-shadow .2s}.primary-button{background:linear-gradient(120deg,#779ab4,#496f8d);color:white;box-shadow:0 6px 15px #526f8540}.primary-button:hover,.outline-button:hover{transform:translateY(-2px)}.outline-button{border:1px solid #6e8aa1;color:var(--ink);background:#f9f7f0aa}.is-disabled{opacity:.5;cursor:not-allowed;pointer-events:none}.micro-note{font:13px/1.7 'DM Sans',sans-serif;color:#67727b;margin:16px auto;max-width:320px}.message p:not(.eyebrow):not(.featured),.rsvp p:not(.eyebrow):not(.micro-note):not(.closing){max-width:370px;line-height:1.62;margin:12px auto}.message .featured{font-size:26px;color:var(--ink);font-style:italic;margin-top:22px;max-width:360px}.divider-floral{display:block;width:165px;height:auto;margin:13px auto 18px;filter:drop-shadow(0 2px 3px #718e8125)}.divider-floral.wide{width:220px;margin:25px auto}.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;max-width:375px;margin:22px 0 10px}.countdown>div{background:linear-gradient(135deg,#dee7ec,#b9cbd8);color:#284965;border-radius:13px;padding:14px 2px 11px;display:flex;flex-direction:column;gap:3px}.countdown strong{font-size:34px;font-weight:500;font-variant-numeric:tabular-nums}.countdown small{font-size:15px}.date-display{margin:12px auto}.date-display strong{display:block;font-size:112px;font-weight:400;color:var(--ink);line-height:1.05}.event-time{font-size:25px;margin:20px auto;color:#344b5c}.venue-illustration{width:min(90%,330px);margin:12px auto 0}.venue-illustration svg{width:100%;height:auto}.venue-name{font-size:34px;font-weight:500;color:var(--ink);margin:0}.venue-address{font-size:22px;margin:5px 0 25px;white-space:pre-line}.rsvp{min-height:700px}.rsvp h2{margin-bottom:20px}.rsvp .primary-button{margin:19px 0}.farewell{font:65px 'Great Vibes',cursive;color:var(--ink);margin:13px 0!important}.closing{font-size:24px}.closing span{display:block;color:var(--ink);font-style:italic}.bottom-bouquet{width:310px;max-width:85%;margin:24px auto -75px}.music-button{position:fixed;z-index:50;bottom:22px;right:max(18px,calc((100vw - 560px)/2 + 20px));width:51px;height:51px;border-radius:50%;border:1px solid #fff9;background:#597e9a;color:#fff;box-shadow:0 4px 15px #384f6060;font-size:24px;cursor:pointer}.music-button.playing{animation:pulse 2.5s infinite}.toast{position:fixed;bottom:85px;left:50%;transform:translateX(-50%) translateY(10px);background:#365875;color:white;font:13px 'DM Sans',sans-serif;border-radius:9px;padding:9px 15px;max-width:90vw;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;text-align:center}.toast.visible{opacity:1;transform:translateX(-50%) translateY(0)}@keyframes pulse{50%{box-shadow:0 0 0 10px #597e9a20}}.reveal{transition:opacity .8s ease,transform .8s ease}.js-ready .reveal:not(.visible){opacity:0;transform:translateY(22px)}.js-ready .hero .reveal{opacity:1;transform:none}@media(max-width:430px){.panel{padding:90px 34px;min-height:660px}.hero{min-height:100svh;padding-top:135px}.corner{width:230px}.corner.small{width:160px}.monogram{height:96px;width:82px;margin-bottom:24px}.names{font-size:44px}.hero h1 span,h2 span{font-size:54px}.venue-name{font-size:30px}.countdown strong{font-size:29px}.date-display strong{font-size:100px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.primary-button,.outline-button{transition:none!important}.music-button.playing{animation:none}}
+
+/* ==================================
+   FOTO OVALADA - BLUE ROMANCE
+================================== */
+
+.photo-panel {
+  min-height: 720px;
+  background: #f7f3ec;
+  padding: 100px 30px;
+  text-align: center;
+}
+
+.photo-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 65px;
+  font-weight: 400;
+  color: #365875;
+  margin: 12px 0 35px;
+}
+
+/* Contenedor del marco */
+.couple-photo-wrapper {
+  position: relative;
+  width: min(100%, 320px);
+  margin: 0 auto;
+  padding: 9px;
+  border: 1px solid #a9bdce;
+  border-radius: 50% / 42%;
+}
+
+/* Marco azul empolvado */
+.couple-photo-frame {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border: 5px solid #d8e3e9;
+  outline: 1px solid #829db2;
+  border-radius: 50% / 42%;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(54, 88, 117, 0.18);
+}
+
+/* Fotografía */
+.couple-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Frase debajo de la fotografía */
+.photo-phrase {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  font-style: italic;
+  color: #657e90;
+  max-width: 310px;
+  margin: 35px auto 15px;
+  line-height: 1.4;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 430px) {
+  .couple-photo-wrapper {
+    width: min(100%, 270px);
+  }
+
+  .photo-title {
+    font-size: 55px;
+  }
+
+  .photo-phrase {
+    font-size: 23px;
+  }
+}
