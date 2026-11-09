@@ -1,29 +1,30 @@
-# Blue Romance — Invitación web para pedida de mano
+# Blue Romance — Nuestra pedida de mano
 
-Diseño pensado para móvil, en tonos marfil y azul empolvado. Contiene portada floral directa, mensaje en primera persona del novio, cuenta regresiva, un solo local, confirmación por WhatsApp y música opcional. **Sin galería, itinerario ni ceremonia civil.**
+Versión actualizada a partir del proyecto original publicado en `ramosaridd-lab/blue-romance-pedida`.
 
-## Personalización (sin editar el diseño)
+## ¿Cómo usar?
+1. Abre la carpeta `blue-romance-pedida` en Visual Studio Code.
+2. Edita `config.js` para modificar nombres, fecha, hora, local, dirección, WhatsApp y rutas de imágenes.
+3. Reemplaza `assets/monograma.png` si deseas cambiar el diseño diagonal K & R. Ya está incluido.
+4. Agrega la fotografía real como `assets/pareja.jpg`. Mientras falte, se verá un marcador floral, no una imagen rota.
+5. Agrega tu música propia/licenciada a `assets/musica.mp3`. La música puede comenzar al pulsar «Ver invitación» y se controla con el botón flotante.
+6. Publica todos los archivos en la raíz del mismo repositorio de GitHub y activa Pages desde la rama `main`, carpeta `/(root)`.
 
-1. Abre `config.js` con VS Code o un editor de texto.
-2. Completa los campos que están entre comillas: `novio`, `novia`, `fecha` (`AAAA-MM-DD`), `hora` (`HH:MM` en formato de 24 horas), `local`, `direccion`, `mapsUrl`, `whatsapp` (código de país + teléfono, solo números) y `fechaLimiteRSVP` (opcional).
-3. Para la música, guarda **tu propio archivo autorizado** como `assets/musica.mp3`. Este ZIP no incluye música. Reproducción al pulsar «Ver invitación» o el botón flotante.
-4. Abre `index.html` para previsualizar. Idealmente usa la extensión Live Server de VS Code para verlo desde un servidor local.
+## ¿Qué hace?
+- Al entrar solo se ve la portada. Los detalles se mantienen ocultos.
+- Al tocar «Ver invitación», aparece la foto ovalada, el mensaje personal, la fecha/cuenta regresiva, el lugar y el RSVP.
+- La imagen de WhatsApp está en `assets/portada-whatsapp.jpg` (1200×630).
+- Las etiquetas Open Graph del `<head>` usan `https://ramosaridd-lab.github.io/blue-romance-pedida/`. Cambia esas URLs si publicas en otra dirección.
+- WhatsApp puede guardar la imagen anterior en caché; después de publicar, prueba el enlace en otro chat.
 
-Si dejas valores vacíos, se mostrarán textos como «Nombre del novio», «Fecha por confirmar» y «Dirección por completar». Los botones de Google Maps y WhatsApp se activan cuando agregas sus datos. No se envía información a ningún servidor propio.
+## Publicar cambios en GitHub (terminal VS Code)
+Si la carpeta ya está vinculada al repositorio:
+```bash
+git add .
+git commit -m "Actualizar portada, monograma y vista previa WhatsApp"
+git push origin main
+```
+Si descargaste este ZIP por separado, copia **su contenido** sobre la carpeta del proyecto local ya conectada a Git y luego usa los comandos anteriores.
 
-## Publicación en GitHub Pages
-
-1. Crea un repositorio público (por ejemplo `blue-romance-pedida`) en GitHub.
-2. Sube `index.html`, `styles.css`, `script.js`, `config.js` y la carpeta `assets` manteniendo la estructura.
-3. En **Settings → Pages → Build and deployment**, selecciona **Deploy from a branch**, rama **main** y carpeta **/(root)**. Guarda.
-4. La dirección suele ser `https://TU-USUARIO.github.io/blue-romance-pedida/`.
-5. Cada vez que edites `config.js` y subas el cambio, se actualizan los datos visibles.
-
-## Archivos
-- `index.html`: estructura de la invitación.
-- `styles.css`: colores, tipografías, composición y animaciones.
-- `script.js`: cuenta regresiva, botones, música, visibilidad.
-- `config.js`: **único archivo de datos a completar**.
-- `assets/floral-esquina.svg` y `assets/floral-centro.svg`: ilustraciones florales originales en SVG transparente, listas para usarse en la web.
-
-Nota: las flores son ilustraciones SVG decorativas originales; están inspiradas en la paleta y distribución de la maqueta, pero no son recortes idénticos de la imagen conceptual.
+## Nota de privacidad
+El número de WhatsApp, dirección y demás datos de `config.js` serán públicos en GitHub Pages y en un repositorio público. Confirma que quieres compartirlos.

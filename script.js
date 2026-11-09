@@ -8,7 +8,10 @@ function notify(message){const t=$('toast');t.textContent=message;t.classList.ad
 function clockTime(v){if(!/^([01]\d|2[0-3]):[0-5]\d$/.test(v||''))return null;const [hh,mm]=v.split(':').map(Number);return `${hh%12||12}:${String(mm).padStart(2,'0')} ${hh>=12?'p. m.':'a. m.'}`}
 const novio=safeName(cfg.novio),novia=safeName(cfg.novia);
 document.querySelectorAll('[data-field]').forEach(el=>{const value=safeName(cfg[el.dataset.field]);if(value){el.textContent=value;el.classList.remove('placeholder')}});
-text('monogram',safeName(cfg.iniciales)||(novio&&novia?`${novio[0].toUpperCase()} · ${novia[0].toUpperCase()}`:'♡'));
+// El monograma ahora es una imagen, sin letras HTML.
+const monogramImage=$('monogram-image');
+if(filled(cfg.monograma))monogramImage.src=cfg.monograma.trim();
+
 text('signoff',novio||'el novio');
 if(novio&&novia)document.title=`${novio} y ${novia} · Nuestra pedida de mano`;
 const dateOk=/^\d{4}-\d{2}-\d{2}$/.test(cfg.fecha||'');
@@ -28,5 +31,28 @@ if(filled(cfg.fechaLimiteRSVP)){const limit=$('rsvp-limit');limit.hidden=false;l
 const audio=$('music');const musicBtn=$('music-toggle');if(filled(cfg.musica))audio.src=cfg.musica;function syncMusic(){const playing=!audio.paused;musicBtn.classList.toggle('playing',playing);musicBtn.setAttribute('aria-pressed',String(playing));musicBtn.setAttribute('aria-label',playing?'Pausar música':'Activar música');musicBtn.title=playing?'Pausar música':'Activar música';musicBtn.textContent=playing?'♫':'♪'}
 async function toggleMusic(){if(!audio.src){notify('Agrega tu archivo MP3 en assets/musica.mp3.');return}if(audio.paused){try{await audio.play()}catch(e){notify('Para escuchar música, agrega un archivo MP3 en assets/musica.mp3.')}}else audio.pause();syncMusic()}
 musicBtn.addEventListener('click',toggleMusic);audio.addEventListener('pause',syncMusic);audio.addEventListener('play',syncMusic);audio.addEventListener('error',()=>{syncMusic();notify('Todavía falta colocar el archivo de música MP3.')});
-$('abrir').addEventListener('click',()=>{$('mensaje').scrollIntoView({behavior:'smooth'});if(audio.paused&&audio.src)toggleMusic()});
+// Portada visible al ingresar; los detalles se revelan al abrir.
+const details=$('contenido-invitacion');
+const openBtn=$('abrir');
+const photo=$('couple-photo');
+const photoFallback=$('couple-photo-placeholder');
+if(filled(cfg.fotoPareja))photo.src=cfg.fotoPareja.trim();
+function handlePhotoError(){photo.hidden=true;photoFallback.hidden=false;}
+photo.addEventListener('error',handlePhotoError);
+photo.addEventListener('load',()=>{photo.hidden=false;photoFallback.hidden=true;});
+if(photo.complete && photo.naturalWidth===0) handlePhotoError();
+let opened=false;
+openBtn.addEventListener('click',()=>{
+  if(opened)return;
+  opened=true;
+  details.hidden=false;
+  openBtn.setAttribute('aria-expanded','true');
+  // Activar la música dentro del gesto del usuario; si no hay MP3, no interrumpe la navegación.
+  if(audio.src && audio.paused){audio.play().then(syncMusic).catch(()=>syncMusic());}
+  requestAnimationFrame(()=>{
+    // Ahora que las secciones son visibles, activar su animación normal.
+    details.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+    $('foto-pareja').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+  });
+});
 if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));document.body.classList.add('js-ready')}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'))}
