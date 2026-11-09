@@ -45,32 +45,12 @@
         <div class="rule"><span>♡</span></div>
         <p class="names"><span data-field="novio" class="placeholder">Nombre del novio</span><em>&amp;</em><span data-field="novia" class="placeholder">Nombre de la novia</span></p>
         <p class="hero-note">Una celebración de amor y familia</p>
-        <button id="abrir" class="primary-button" type="button">Ver invitación <span aria-hidden="true">♡</span></button>
+        <button id="abrir" class="primary-button" type="button" aria-controls="contenido-invitacion" aria-expanded="false">Ver invitación <span aria-hidden="true">♡</span></button>
         <p class="micro-note">Toca para descubrir este momento especial</p>
       </div>
     </section>
 
-    <!-- Contenido que solo se descubre al tocar «Ver invitación». -->
-    <div id="contenido-invitacion" hidden>
-      <section class="panel photo-panel reveal" id="foto-pareja" aria-labelledby="foto-titulo">
-        <div class="frame"></div>
-        <img class="floral corner top-left small" src="assets/floral-esquina.svg" alt="" />
-        <p class="eyebrow">UN AMOR, UNA HISTORIA</p>
-        <h2 class="photo-title" id="foto-titulo">Nuestro amor</h2>
-        <div class="couple-photo-wrapper">
-          <div class="couple-photo-frame">
-            <img id="couple-photo" class="couple-photo" src="assets/pareja.jpg" alt="Kennedy y Rosa" />
-            <div id="couple-photo-placeholder" class="couple-photo-placeholder" aria-hidden="true">
-              <img src="assets/floral-centro.svg" alt="" />
-              <span>Una hermosa historia</span>
-            </div>
-          </div>
-        </div>
-        <p class="photo-phrase">El comienzo de una hermosa historia juntos.</p>
-        <img class="divider-floral" src="assets/floral-centro.svg" alt="" />
-      </section>
-
-      <!-- Contenido que solo se descubre al tocar «Ver invitación». -->
+    <!-- Los detalles de la invitación aparecen al pulsar el botón. -->
     <div id="contenido-invitacion" hidden>
       <section class="panel photo-panel reveal" id="foto-pareja" aria-labelledby="foto-titulo">
         <div class="frame"></div>

@@ -51,7 +51,7 @@ openBtn.addEventListener('click',()=>{
   if(audio.src && audio.paused){audio.play().then(syncMusic).catch(()=>syncMusic());}
   requestAnimationFrame(()=>{
     // Ahora que las secciones son visibles, activar su animación normal.
-    details.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+    details.querySelectorAll('.reveal').forEach(section => section.classList.add('visible'));
     $('foto-pareja').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
   });
 });

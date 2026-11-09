@@ -28,3 +28,7 @@ Si descargaste este ZIP por separado, copia **su contenido** sobre la carpeta de
 
 ## Nota de privacidad
 El número de WhatsApp, dirección y demás datos de `config.js` serán públicos en GitHub Pages y en un repositorio público. Confirma que quieres compartirlos.
+
+
+## Corrección del 8 de noviembre
+Se corrigió un contenedor duplicado de `contenido-invitacion` y una fotografía duplicada en `index.html`, responsables de ocultar las secciones posteriores. Se mantiene la portada independiente y al pulsar «Ver invitación» se habilitan las cinco secciones.
