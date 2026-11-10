@@ -29,8 +29,27 @@ const phone=(cfg.whatsapp||'').replace(/\D/g,'');
 if(phone.length>=10&&phone.length<=15){const greeting=`Hola, confirmo mi asistencia a la pedida de mano${novio&&novia?` de ${novio} y ${novia}`:''}. ¡Muchas gracias por la invitación!`;wa.href=`https://wa.me/${phone}?text=${encodeURIComponent(greeting)}`;wa.target='_blank';wa.rel='noopener noreferrer';wa.classList.remove('is-disabled');wa.removeAttribute('aria-disabled');wa.removeAttribute('tabindex')}
 if(filled(cfg.fechaLimiteRSVP)){const limit=$('rsvp-limit');limit.hidden=false;limit.textContent=`Agradeceré tu confirmación antes del ${cfg.fechaLimiteRSVP.trim()}.`}
 const audio=$('music');const musicBtn=$('music-toggle');if(filled(cfg.musica))audio.src=cfg.musica;function syncMusic(){const playing=!audio.paused;musicBtn.classList.toggle('playing',playing);musicBtn.setAttribute('aria-pressed',String(playing));musicBtn.setAttribute('aria-label',playing?'Pausar música':'Activar música');musicBtn.title=playing?'Pausar música':'Activar música';musicBtn.textContent=playing?'♫':'♪'}
-async function toggleMusic(){if(!audio.src){notify('Agrega tu archivo MP3 en assets/musica.mp3.');return}if(audio.paused){try{await audio.play()}catch(e){notify('Para escuchar música, agrega un archivo MP3 en assets/musica.mp3.')}}else audio.pause();syncMusic()}
-musicBtn.addEventListener('click',toggleMusic);audio.addEventListener('pause',syncMusic);audio.addEventListener('play',syncMusic);audio.addEventListener('error',()=>{syncMusic();notify('Todavía falta colocar el archivo de música MP3.')});
+
+async function toggleMusic() {
+  if (!audio.getAttribute('src')) {
+    notify('No se ha configurado la música.');
+    return;
+  }
+
+  if (audio.paused) {
+    try {
+      await audio.play();
+    } catch (error) {
+      console.error('Error al reproducir música:', error);
+      notify('No se pudo reproducir la música.');
+    }
+  } else {
+    audio.pause();
+  }
+
+  syncMusic();
+}
+
 // Portada visible al ingresar; los detalles se revelan al abrir.
 const details=$('contenido-invitacion');
 const openBtn=$('abrir');
