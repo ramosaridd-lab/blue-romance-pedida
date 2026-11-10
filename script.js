@@ -203,9 +203,7 @@ if (target) {
 // 6. LUGAR DEL EVENTO Y GOOGLE MAPS
 // =====================================================
 
-if (filled(cfg.local)) {
-  text('venue-name', cfg.local.trim());
-}
+
 
 if (filled(cfg.direccion)) {
   text('venue-address', cfg.direccion.trim());
